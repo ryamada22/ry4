@@ -2,9 +2,8 @@
 #' @useDynLib ry4
 
 foo <- function(x) {
-    type <- match.arg(type)
     stopifnot(is.numeric(x))
 
-    out <- .Fortran("foo", x = as.double(x), n = length(x), PACKAGE = "foo")
+    out <- .Fortran("foo", x = as.double(x), n = length(x), PACKAGE = "ry4")
     return(out$x)
 }
